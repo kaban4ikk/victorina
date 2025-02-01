@@ -1,0 +1,141 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Сложные задачи</h1>
+        <form id="quizForm" class="space-y-6">
+            <div>
+                <p class="font-semibold">Через 2 часа до полуночи останется в 2 раза меньше, чем оставалось бы через один час. Который сейчас час? (в формате 00:00)</p>
+                <input type="text" name="question1" class="mt-2 p-2 border rounded w-full" placeholder="Ваш ответ">
+            </div>
+            <div>
+                <p class="font-semibold">В месяце три воскресенья выпали на четные числа. Какой день недели был седьмого числа этого месяца?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question2" value="Понедельник" class="mr-2"> Понедельник
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Вторник" class="mr-2"> Вторник
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Среда" class="mr-2"> Среда
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Четверг" class="mr-2"> Четверг
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Пятница" class="mr-2"> Пятница
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Суббота" class="mr-2"> Суббота
+                    </label>
+                </ div>
+            </div>
+            <div>
+                <p class="font-semibold">Есть 100 кг ягод, 99% веса которых составляет вода. Из-за продолжительного хранения содержание воды в ягодах сократилось до 98%. Сколько теперь весят ягоды?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question3" value="98" class="mr-2"> 98
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="50" class="mr-2"> 50
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="90" class="mr-2"> 90
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="45" class="mr-2"> 45
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Как называется число, которое равно сумме своих делителей, кроме самого себя?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question4" value="Простое число" class="mr-2"> Простое число
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Совершенное число" class="mr-2"> Совершенное число
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Фигурное число" class="mr-2"> Фигурное число
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Иррациональное число" class="mr-2"> Иррациональное число
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Как называется число, которое равно сумме факториалов своих цифр?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question5" value="Число Фибоначи" class="mr-2"> Число Фибоначи
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Число Кармайкла" class="mr-2"> Число Кармайкла
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Факторион" class="mr-2"> Факторион
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Совершенное число" class="mr-2"> Совершенное число
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Анна написала все числа от 300 до 400 на листе бумаги. Сколько раз она написала цифру 3?</p>
+                <input type="number" name="question6" class="mt-2 p-2 border rounded w-full" placeholder="Ваш ответ">
+            </div>
+            <button type="button" onclick="submitQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded">Отправить</button>
+        </form>
+        <div id="result" class="mt-6 hidden">
+            <h2 class="text-xl font-bold">Результаты</h2>
+            <p id="score" class="mt-2"></p>
+            <div id="incorrectAnswers" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            question1: "21:00",
+            question2: "Пятница",
+            question3: "50",
+            question4: "Совершенное число",
+            question5: "Факторион",
+            question6: "120"
+        };
+
+        function submitQuiz() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    let score = 0;
+
+    for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+        const userAnswer = formData.get(question);
+        const questionElement = document.querySelector(`[name="${question}"]`).closest('div');
+        if (userAnswer === correctAnswer) {
+            score++;
+            questionElement.classList.add('bg-green-100');
+        } else {
+            questionElement.classList.add('bg-red-100');
+        }
+    }
+
+    document.getElementById('score').innerText = `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`;
+    document.getElementById('result').classList.remove('hidden');
+}
+    </script>
+</body>
+</html>

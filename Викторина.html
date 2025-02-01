@@ -1,0 +1,238 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Викторина</h1>
+        <form id="quizForm" class="space-y-6">
+            <div>
+                <p class="font-semibold">Какой математический символ был введен Уильямом Джонсом для обозначения отношения длины окружности к её диаметру?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question1" value="α" class="mr-2"> α
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question1" value="π" class="mr-2"> π
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question1" value="φ" class="mr-2"> φ
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question1" value="∞" class="mr-2"> ∞
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Какой математик, известный своими работами в области алгебры, также был известен своим увлечением алхимией и поиском философского камня?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question2" value="Декарт" class="mr-2"> Декарт
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Ньютон" class="mr-2"> Ньютон
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Гаусс" class="mr-2"> Гаусс
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question2" value="Ферма" class="mr-2"> Ферма
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Какой математик считается создателем современной системы координат, которую мы используем в графиках?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question3" value="Исак Ньютон" class="mr-2"> Исак Ньютон
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="Готфрид Лейбниц" class="mr-2"> Готфрид Лейбниц
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="Рене Декарт" class="mr-2"> Рене Декарт
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="Леонард Эйлер" class="mr-2"> Леонард Эйлер
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Кто из них уже в 24 летнем возрасте был профессором университета?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question4" value="Лобачевский" class="mr-2"> Лобачевский
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Евклид" class="mr-2"> Евклид
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Архимед" class="mr-2"> Архимед
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="Гаусс" class="mr-2"> Гаусс
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Кому из этих учёных принадлежат слова: «Математика – царица наук, арифметика – царица математики»?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question5" value="Лобачевский" class="mr-2"> Лобачевский
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Гаусс" class="mr-2"> Гаусс
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Евклид" class="mr-2"> Евклид
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="Пифагор" class="mr-2"> Пифагор
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">В какой стране впервые были открыты отрицательные и положительные числа и операции над ними?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question6" value="Индия" class="mr-2"> Индия
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="Китай" class="mr-2"> Китай
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="Франция" class="mr-2"> Франция
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="Германия" class="mr-2"> Германия
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Рассказывают, что однажды фараон пожелал узнать высоту пирамиды. Но никто не смог определить ее. Этот ученый справился с поставленной задачей.</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question7" value="Пифагор" class="mr-2"> Пифагор
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question7" value="Архимед" class="mr-2"> Архимед
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question7" value="Фалес Милетский" class="mr-2"> Фалес Милетский
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question7" value="Евклид" class="mr-2"> Евклид
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Какой математик был известен своим увлечением музыкой и даже утверждал, что числа имеют музыкальные свойства?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question8" value="Пифагор" class="mr-2"> Пифагор
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question8" value="Ньютон" class="mr-2"> Ньютон
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question8" value="Эйлер" class="mr-2"> Эйлер
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question8" value="Гаусс" class="mr-2"> Гаусс
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Какое число Пифагор считал идеальным?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question9" value="4" class="mr-2"> 4
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question9" value="10" class="mr-2"> 10
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question9" value="52" class="mr-2"> 52
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question9" value="100" class="mr-2"> 100
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Какой математик, известный своими работами в области теории вероятностей, также был страстным игроком в азартные игры и даже потерял состояние на ставках?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question10" value="Блез Паскаль" class="mr-2"> Блез Паскаль
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question10" value="Карл Фридрих Гаусс" class="mr-2"> Карл Фридрих Гаусс
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question10" value="Пьер-Симон Лаплас" class="mr-2"> Пьер-Симон Лаплас
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question10" value="Эмиль Борель" class="mr-2"> Эмиль Борель
+                    </label>
+                </div>
+            </div>
+            <button type="button" onclick="submitQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded">Отправить</button>
+        </form>
+        <div id="result" class="mt-6 hidden">
+            <h2 class="text-xl font-bold">Результаты</h2>
+            <p id="score" class="mt-2"></p>
+            <div id="incorrectAnswers" class="mt-4"></div>
+        </div>
+    </div>
+
+   <script>
+        const correctAnswers = {
+            question1: "π",
+            question2: "Ньютон",
+            question3: "Рене Декарт",
+            question4: "Лобачевский",
+            question5: "Гаусс",
+            question6: "Китай",
+            question7: "Фалес Милетский",
+            question8: "Пифагор",
+            question9: "10",
+            question10: "Блез Паскаль"
+            // Добавьте остальные правильные ответы
+        };
+
+       function submitQuiz() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    let score = 0;
+
+    for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+        const userAnswer = formData.get(question);
+        const questionElement = document.querySelector(`[name="${question}"]`).closest('div');
+        if (userAnswer === correctAnswer) {
+            score++;
+            questionElement.classList.add('bg-green-100');
+        } else {
+            questionElement.classList.add('bg-red-100');
+        }
+    }
+
+    document.getElementById('score').innerText = `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`;
+    document.getElementById('result').classList.remove('hidden');
+}
+
+    </script>
+</body>
+</html>
+
+</body>
+</html>

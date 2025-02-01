@@ -1,0 +1,140 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Тест</h1>
+        <form id="quizForm" class="space-y-6">
+            <div>
+                <p class="font-semibold">Не предмет, но и не вещь. Потрогать невозможно, формы нет. А называют круглыми. О чём речь?</p>
+                <input type="text" name="question1" class="mt-2 p-2 border rounded w-full" placeholder="Ваш ответ">
+            </div>
+            <div>
+                <p class="font-semibold">Сколько раз можно вычесть 6 из 30? (введите цифру)</p>
+                <input type="number" name="question2" class="mt-2 p-2 border rounded w-full" placeholder="Ваш ответ">
+            </div>
+            <div>
+                <p class="font-semibold">Заяц шёл к реке и встретил 6 слонов. Каждый слон встретил 2 обезьян, идущих к реке, каждая обезьяна держала на руке попугая. Сколько животных шли к реке?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question3" value="6" class="mr-2"> 6
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="13" class="mr-2"> 13
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="19" class="mr-2"> 19
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question3" value="3" class="mr-2"> 3
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">В комнате находятся 10 человек. Каждый из них пожимает руку каждому другому. Сколько всего рукопожатий произошло?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question4" value="45" class="mr-2"> 45
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="90" class="mr-2"> 90
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="55" class="mr-2"> 55
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question4" value="100" class="mr-2"> 100
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Если 5 машин за 5 минут производят 5 деталей, то за сколько минут 100 машин произведут 100 деталей?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question5" value="5 минут" class="mr-2"> 5 минут
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="100 минут" class="mr-2"> 100 минут
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="1 минута" class="mr-2"> 1 минута
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question5" value="50 минут" class="mr-2"> 50 минут
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">Когда Руслану было 8 лет, его брат был вдвое моложе его. Теперь, когда Руслану 14 лет, сколько лет его брату?</p>
+                <div class="mt-2 space-y-2">
+                    <label class="block">
+                        <input type="radio" name="question6" value="7" class="mr-2"> 7
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="10" class="mr-2"> 10
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="28" class="mr-2"> 28
+                    </label>
+                    <label class="block">
+                        <input type="radio" name="question6" value="8" class="mr-2"> 8
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p class="font-semibold">В парке 8 скамеек. Три покрасили. Сколько скамеек стало в парке?</p>
+                <input type="text" name="question7" class="mt-2 p-2 border rounded w-full" placeholder="Ваш ответ">
+            </div>
+            <button type="button" onclick="submitQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded">Отправить</button>
+        </form>
+        <div id="result" class="mt-6 hidden">
+            <h2 class="text-xl font-bold">Результаты</h2>
+            <p id="score" class="mt-2"></p>
+            <div id="incorrectAnswers" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            question1: "Сутки",
+            question2: "1",
+            question3: "3",
+            question4: "45",
+            question5: "5 минут",
+            question6: "10",
+            question7: "8"
+        };
+
+       function submitQuiz() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    let score = 0;
+
+    for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+        const userAnswer = formData.get(question);
+        const questionElement = document.querySelector(`[name="${question}"]`).closest('div');
+        if (userAnswer === correctAnswer) {
+            score++;
+            questionElement.classList.add('bg-green-100');
+        } else {
+            questionElement.classList.add('bg-red-100');
+        }
+    }
+
+    document.getElementById('score').innerText = `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`;
+    document.getElementById('result').classList.remove('hidden');
+}
+    </script>
+</body>
+</html>
